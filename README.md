@@ -1,24 +1,30 @@
-# README
+# hikuchika
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+低血圧改善アプリ。
+低血圧に効くレシピを検索したり、自分が作った料理のレシピを投稿したりできるコミュニティサイト。
+また、低血圧チェック機能を利用して、現状の低血圧度合を数値で把握できるようにする。
 
-Things you may want to cover:
+### テーマを選んだ理由
+若い女性に多い低血圧ですが、症状としてはめまいや吐き気、倦怠感、頭痛などの様々な症状を伴います。
+低血圧は遺伝性の体質である場合が多いようですが、食事に気を遣うことで低血圧は改善すると考えられています。
+低血圧の方々がどんな料理をしているのかを知れるサービスがあれば便利だと考え、このテーマにしました。
 
-* Ruby version
+### ターゲットユーザ
+- 低血圧の方
+- 低血圧のご家族がいる方
+- 朝起きるのが辛い方
+- めまいや立ちくらみすることが多い方
 
-* System dependencies
+### 主な利用シーン
+- 低血圧改善の料理のレシピを検索するとき
+- 低血圧で全然元気は出ないから簡単で低血圧に効く料理を調べたいとき
+- 自分が作った低血圧改善の料理のレシピを投稿するとき
+- 体調の悪い日が続いて低血圧度合が気になるとき
 
-* Configuration
+## 設計書
+<...>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
