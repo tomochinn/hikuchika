@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :recipes, only: [:show, :destroy]
     resources :comments, only: [:index, :show, :destroy]
-    resources :users, only: [:index, :show, :edit, :update]
+    resources :users, only: [:show]
   end
  
   
