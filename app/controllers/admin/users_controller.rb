@@ -3,6 +3,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -10,4 +11,11 @@ class Admin::UsersController < ApplicationController
 
   def update
   end
+  
+  private
+  # ストロングパラメータ
+  def user_params
+    params.require(:user).permit(:id, :name, :email)
+  end
+  
 end

@@ -1,1 +1,58 @@
 <h2>レシピ投稿</h2>
+
+<%= form_with model: @recipe, url:recipes_path do |f| %>
+
+  <div class="field">
+    <%= f.label :レシピ画像 %>
+    <%= f.file_field :image, accept: "image/*" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :レシピ名 %>
+    <%= f.text_field :recipe_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :カテゴリー %>
+    <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :genre_name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :何人前 %>
+    <%= f.text_field :serving %>
+  </div>
+
+  <div class="field">
+    <%= f.label :調理時間 %>
+    <%= f.text_field :cooking_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :費用 %>
+    <%= f.text_field :price %>
+  </div>
+
+  <!--<div class="field">-->
+  <!--  <%#= f.label :レシピタグ %>-->
+  <!--  <%#= f.text_field :recipe_tag %>-->
+  <!--</div>-->
+
+
+  <div class="field">
+    <%= f.label :材料 %>
+    <%= f.text_area :ingredient %>
+  </div>
+
+  <div class="field">
+    <%= f.label :作り方 %>
+    <%= f.text_area :recipe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :コツ・ポイント %>
+    <%= f.text_field :point %>
+  </div>
+
+  <%= f.submit '投稿する', class: "btn btn-success" %>
+
+<% end %>

@@ -1,1 +1,23 @@
-<h2>adminのトップページ　ユーザー一覧</h2>
+<h2>ユーザー一覧</h2>
+
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>登録日</th>
+      <th>ユーザーID</th>
+      <th>名前</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= user.id  %></td>
+      <td><%= link_to user.name, admin_user_path(user.id) %></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

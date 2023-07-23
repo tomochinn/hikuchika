@@ -3,7 +3,6 @@ class CreateFavorites < ActiveRecord::Migration[6.1]
     create_table :favorites do |t|
       t.integer :recipe_id, null: false
       t.integer :user_id, null: false
-      t.string :favorite_recipe, null: false
       t.timestamps
     end
   end

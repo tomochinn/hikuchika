@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="mx-auto text-center">
+      <h2>マイページ</h2>
+      <h5>登録情報</h5>
+      <p><%= link_to "編集", edit_user_path %></p>
+
+      <table class="table">
+        <tr>
+          <th>名前</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th>プロフィール画像</th>
+          <td><%= image_tag @user.get_image(200,200) %></td>
+        </tr>
+      </table>
+      <p><%= link_to "低血圧チェック", new_check_path %></p>
+      <!--ユーザーの投稿レシピ一覧（レシピ一覧を使用する）-->
+      <p><%= link_to "投稿レシピ一覧", recipes_path %></p>
+    </div>
+  </div>
+</div>

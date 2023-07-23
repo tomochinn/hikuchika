@@ -1,1 +1,21 @@
-<h2>ユーザー詳細</h2>
+<h2><%= @user.name %>さんのユーザー詳細</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>会員ID</th>
+      <td><%= @user.id %></td>
+    </tr>
+    <tr>
+      <th>氏名</th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @user.email %></td>
+    </tr>
+  </thead>
+</table>
+
+<%= link_to "投稿レシピ一覧を見る", recipes_path %>
+<%= link_to "コメント一覧を見る", admin_comments_path %>
