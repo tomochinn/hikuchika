@@ -13,7 +13,7 @@
   
   <div class="field">
     <%= f.label :カテゴリー %>
-    <%= f.text_field :category %>
+    <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :genre_name) %>
   </div>
 
   <div class="field">

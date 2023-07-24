@@ -26,7 +26,10 @@ Rails.application.routes.draw do
     get 'users/information/:id/edit' => 'users#edit', as: 'edit_user'
     patch 'users/:id/mypage' => 'users#update', as: 'update_user'
     resources :checks, only: [:index, :new, :create, :show]
+    get 'recipes/:genre_id/search' => 'recipes#search', as: 'recipe_genre_search'
+    get 'searches/search' => 'searches#search', as: 'search'
     resources :recipes do
+
       resources :comments, only: [:new, :create, :destroy]
       resource :favorites, only: [:create, :destroy]
       get :favorites, on: :collection

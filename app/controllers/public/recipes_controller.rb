@@ -1,8 +1,23 @@
 class Public::RecipesController < ApplicationController
 
   def index
+    # 検索する場合
+    if params[:search].present?
+      @recipes = Recipe.search_by_title(params[:search])
+    
+    # レシピ一覧を表示する場合
+    else
+      @genres = Genre.all
+      @genre = Genre.where(id: params[:genre_id])
+      @recipes = Recipe.all
+      
+    end
+  end
+
+  def search
     @genres = Genre.all
-    @recipes = Recipe.all
+    @recipes = Recipe.where(genre_id: params[:genre_id])
+    render "index"
   end
 
   def new
@@ -14,7 +29,7 @@ class Public::RecipesController < ApplicationController
     @recipe.user_id = current_user.id
     @recipe.genre_name = Genre.find(params[:recipe][:genre_id]).genre_name
     @recipe.save!
-    
+
     #先ほど新規登録したrecipeの詳細ページにリダイレクト
     redirect_to recipe_path(@recipe.id)
   end
