@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!, except: [:top, :about, :recipe_index]
   
   protect_from_forgery
 

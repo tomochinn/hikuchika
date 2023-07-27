@@ -4,7 +4,6 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
       t.integer :user_id, null: false
       t.integer :genre_id, null: false
       t.string :recipe_name, null: false
-      t.string :genre_name, null: false
       t.integer :serving, null: false
       t.integer :price, null: false
       t.integer :cooking_time, null: false

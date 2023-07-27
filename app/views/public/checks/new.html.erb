@@ -1,0 +1,88 @@
+<%= flash[:notice] %>
+<h2>低血圧チェック</h2>
+
+<%= form_with model: @check, url:checks_path do |f| %>
+
+    <h3>Q.1 だるくて、疲れやすいですか？</h3>
+      <label>
+          <%= f.radio_button :tired, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :tired, 0 %> はい
+      </label>
+
+    <h3>Q.2 立ちくらみがしますか？</h3>
+      <label>
+          <%= f.radio_button :lightheadedness, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :lightheadedness, 0 %> はい
+      </label>
+
+    <h3>Q.3 めまいや耳鳴りがしますか？</h3>
+      <label>
+          <%= f.radio_button :dizzy, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :dizzy, 0 %> はい
+      </label>
+
+    <h3>Q.4 頭痛や頭重がありますか？</h3>
+      <label>
+          <%= f.radio_button :headache, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :headache, 0 %> はい
+      </label>
+
+    <h3>Q.5 肩こりがひどいですか？</h3>
+      <label>
+          <%= f.radio_button :stiff_neck, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :stiff_neck, 0 %> はい
+      </label>
+
+    <h3>Q.6 手足が冷たいですか？</h3>
+      <label>
+          <%= f.radio_button :cold, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :cold, 0 %> はい
+      </label>
+
+    <h3>Q.7 脳貧血を起こしたことがありますか？</h3>
+      <label>
+          <%= f.radio_button :anemia, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :anemia, 0 %> はい
+      </label>
+
+    <h3>Q.8 長湯をするとのぼせやすいですか？</h3>
+      <label>
+          <%= f.radio_button :bring_up, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :bring_up, 0 %> はい
+      </label>
+
+    <h3>Q.9 動悸がすることがありますか？</h3>
+      <label>
+          <%= f.radio_button :pulsation, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :pulsation, 0 %> はい
+      </label>
+
+    <h3>Q.10 胃のもたれや吐き気がありますか？</h3>
+      <label>
+          <%= f.radio_button :stomachache, 10 %> いいえ
+      </label>
+      <label>
+          <%= f.radio_button :stomachache, 0 %> はい
+      </label>
+
+    <br>
+    <%= f.submit "診断する", class: "btn btn-primary" %>
+ <% end %>

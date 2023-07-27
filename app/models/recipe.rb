@@ -7,6 +7,17 @@ class Recipe < ApplicationRecord
   
   has_one_attached :image
   
+  # バリデーションチェック
+  validates :image, presence: true
+  validates :recipe_name, presence: true
+  validates :genre_id, presence: true
+  validates :serving, presence: true
+  validates :cooking_time, presence: true
+  validates :price, presence: true
+  validates :ingredient, presence: true
+  validates :recipe, presence: true
+  validates :point, presence: true
+  
   # get_imageメソッドを定義
   def get_image(width,height)
     # 画像が添付されていない場合

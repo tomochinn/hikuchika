@@ -1,7 +1,5 @@
 class Public::CommentsController < ApplicationController
-  def new
-  end
-  
+
   def create
     recipe = Recipe.find(params[:recipe_id])
     # comment = PostComment.new(post_comment_params)と

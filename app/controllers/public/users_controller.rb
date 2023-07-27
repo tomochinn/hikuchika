@@ -1,5 +1,10 @@
 class Public::UsersController < ApplicationController
   
+  def index
+    @user = current_user
+    @recipes = @user.recipes
+  end
+  
   def show
     @user = current_user
     @user.get_image(200,200)

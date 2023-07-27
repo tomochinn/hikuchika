@@ -94,7 +94,6 @@ ActiveRecord::Schema.define(version: 2023_07_24_063809) do
     t.integer "user_id", null: false
     t.integer "genre_id", null: false
     t.string "recipe_name", null: false
-    t.string "genre_name", null: false
     t.integer "serving", null: false
     t.integer "price", null: false
     t.integer "cooking_time", null: false

@@ -1,3 +1,5 @@
+<%= flash[:notice] %>
+
 <div class="container px-5 px-sm-0">
   <h2>レシピ詳細</h2>
 
@@ -26,7 +28,7 @@
       </tr>
       <tr>
         <th>カテゴリー</th>
-        <td><%= @recipe.genre_name %></td>
+        <td><%= @recipe.genre.genre_name %></td>
       </tr>
       <tr>
         <th>何人前</th>
@@ -92,6 +94,6 @@
 <div>
   <%= form_with model: [@recipe, @comment] do |f| %>
     <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
+    <%= f.submit "送信する", class: "btn btn-primary" %>
   <% end %>
 </div>
