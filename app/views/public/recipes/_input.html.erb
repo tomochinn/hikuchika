@@ -1,6 +1,3 @@
-<h2>レシピ編集</h2>
-<%= form_with model: @recipe, url:recipe_path(@recipe.id), method: :patch do |f| %>
-
   <div class="field">
     <%= f.label :レシピ画像 %>
     <%= f.file_field :image, accept: "image/*" %>
@@ -40,12 +37,8 @@
     <%= f.label :作り方 %>
     <%= f.text_area :recipe %>
   </div>
-  
+
   <div class="field">
     <%= f.label :コツ・ポイント %>
     <%= f.text_area :point %>
   </div>
-
-  <%= f.submit '変更を保存', class: "btn btn-success" %>
-
-<% end %>

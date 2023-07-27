@@ -1,4 +1,7 @@
 class Admin::HomesController < ApplicationController
+  
+  before_action :authenticate_user!, except: [:top, :about]
+  
   def top
     @users = User.all
   end

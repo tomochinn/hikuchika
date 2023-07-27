@@ -12,12 +12,15 @@ class Admin::GenresController < ApplicationController
   def create
     # 新しいジャンルを登録する箱を用意する
     @genre = Genre.new(genre_params)
+    @genres = Genre.all
 
-    # 新しいジャンルを保存する
-    @genre.save
-    
+    if @genre.save
+      flash[:notice] = "ジャンルの作成に成功しました。"
     # genre一覧にリダイレクト
-    redirect_to admin_genres_path
+      redirect_to admin_genres_path
+    else
+      render :index
+    end
   end
 
   def edit

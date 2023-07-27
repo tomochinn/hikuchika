@@ -1,0 +1,21 @@
+<% recipes.each do |recipe| %>
+  <div class="col-3">
+    <table>
+
+        <tr>
+          <td>
+            <!--recipeイメージ-->
+            <%= link_to recipe_path(recipe.id) do %>
+              <%= image_tag recipe.image, size: "100x100" %>
+            <% end %>
+
+          </td>
+        </tr>
+        <tr>
+          <!--recipe名-->
+          <td><%= link_to recipe.recipe_name, recipe_path(recipe.id) %></td>
+        </tr>
+      </div>
+    </table>
+    </div>
+  <% end %>
