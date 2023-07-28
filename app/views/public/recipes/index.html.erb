@@ -14,11 +14,17 @@
     </div>
 
     <div class="mx-auto col-12 col-sm-10 col-lg-8 col-xl-6">
+      
       <h2>レシピ一覧</h2>
+      <%= link_to "レシピを新規登録", new_recipe_path, class: "btn btn-warning" %>
       <div class="row">
+        
+        
+        <!--recipe一覧部分テンプレート-->
         <%= render 'list', recipes: @recipes %>
+        
       </div>
-      <%= link_to "レシピを新規登録", new_recipe_path %>
+      
 
     </div>
 

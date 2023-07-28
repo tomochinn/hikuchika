@@ -14,10 +14,10 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="bg-light dark-sm">
+    <header class="bg-secondary light-sm">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand p-3" href="/">Hikuchika</a>
+          <a class="navbar-brand p-3 text-light" href="/">Hikuchika</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,46 +28,43 @@
             <!--adminがサインインしている場合-->
             <% if admin_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'ジャンル一覧', admin_genres_path, class: 'nav-link text-dark' %>
+              <%= link_to 'ジャンル一覧', admin_genres_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'ユーザー一覧', admin_root_path, class: 'nav-link text-dark' %>
+              <%= link_to 'ユーザー一覧', admin_root_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
             </li>
 
             <!--ユーザーがサインインしている場合-->
             <% elsif user_signed_in? %>
             <li class="nav-item">
-              <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-dark' %>
+              <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'レシピ一覧', recipes_path, class: 'nav-link text-dark' %>
+              <%= link_to 'レシピ一覧', recipes_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%# @recipes.each do |recipe| %>
-                <%#= link_to '保存一覧', recipe_favorites_path(recipe_id: recipe.id), class: 'nav-link text-dark' %>
-                <%= link_to '保存一覧',favorites_recipes_path, class: 'nav-link text-dark' %>
-              <%# end %>
+                <%= link_to '保存一覧',favorites_recipes_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
             </li>
 
             <!--サインアウトされている状態-->
             <% else %>
             <li class="nav-item">
-              <%= link_to 'About', about_path, class: 'nav-link text-dark' %>
+              <%= link_to 'About', about_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'レシピ一覧', recipes_path, class: 'nav-link text-dark' %>
+              <%= link_to 'レシピ一覧', recipes_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
+              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
+              <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-light' %>
             </li>
             <% end %>
             
@@ -80,7 +77,7 @@
     <main class="mb-auto">
     <%= yield %>
     </main>
-    <footer class="bg-warning text-dark pt-5 pb-4">
+    <footer class="bg-secondary text-light pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-6">

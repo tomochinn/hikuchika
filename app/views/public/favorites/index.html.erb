@@ -2,36 +2,14 @@
   <div class="mx-auto col-12 col-sm-10 col-lg-8 col-xl-6">
       <h2>保存レシピ一覧</h2>
       <div class="row">
-        <% @favorites.each do |favorite| %>
-        <div class="col-3">
-          <table>
-
-              <tr>
-                <td>
-                  <!--recipeイメージ-->
-                  <%= link_to recipe_path(@recipe.id) do %>
-                    <%= image_tag recipe.image, size: "100x100" %>
-                  <% end %>
-
-                </td>
-              </tr>
-              <tr>
-                <!--recipe名-->
-                <td><%= link_to recipe.recipe_name, recipe_path(@recipe.id) %></td>
-              </tr>
-            </div>
-          </table>
-          </div>
-        <% end %>
-
+        
+        <!--recipe一覧部分テンプレート-->
+        <%= render partial: 'public/recipes/list', locals: { recipes: '@favorites' } %>
+        
       </div>
       <%= link_to "レシピを新規登録", new_recipe_path %>
-
-      <p><%#= link_to "#{recipe.comments.count} コメント", recipe_path(recipe.id) %></p>
-
     </div>
 
-  <%#= paginate @recipes %>
 
   </div>
 </div>
