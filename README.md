@@ -9,6 +9,7 @@
 ### テーマを選んだ理由
 若い女性に多い低血圧ですが、症状としてはめまいや吐き気、倦怠感、頭痛などの様々な症状を伴います。
 低血圧は遺伝性の体質である場合が多いようですが、食事に気を遣うことで低血圧は改善すると考えられています。
+自分自身、低血圧が原因で朝起きるのが辛かったり、めまいで立ち上がれないこともありましたが、食事に気を遣うことでかなり改善しました。
 低血圧の方々がどんな料理をしているのかを知れるサービスがあれば便利だと考え、このテーマにしました。
 
 ### ターゲットユーザ
@@ -24,7 +25,10 @@
 - 体調の悪い日が続いて低血圧度合が気になるとき
 
 ## 設計書
-<...>
+- ER図
+https://drive.google.com/file/d/1GCzzV22-DjeLYlYFsqArzc9hxSIOxV67/view?usp=sharing
+- アプリ詳細設計
+https://docs.google.com/spreadsheets/d/1p8ivv1vRdEse4SmAYjkJKqjXzxOvOXWU94WT0vAq-T0/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
