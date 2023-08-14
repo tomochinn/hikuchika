@@ -46,8 +46,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'homes#top'
-    # resources :recipes, only: [:destroy]
-    # resources :comments, only: [:destroy]
     resources :users, only: [:show]
     resources :genres, only: [:index, :new, :create, :edit, :update, :destroy]
   end

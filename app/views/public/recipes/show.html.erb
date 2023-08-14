@@ -32,15 +32,15 @@
       </tr>
       <tr>
         <th>何人前</th>
-        <td><%= @recipe.serving %></td>
+        <td><%= @recipe.serving %>人前</td>
       </tr>
       <tr>
         <th>調理時間</th>
-        <td><%= @recipe.cooking_time %></td>
+        <td><%= @recipe.cooking_time %>分</td>
       </tr>
       <tr>
         <th>費用</th>
-        <td><%= @recipe.price %></td>
+        <td><%= @recipe.price %>円</td>
       </tr>
       <tr>
         <th>材料</th>
@@ -54,13 +54,17 @@
         <th>コツ・ポイント</th>
         <td><%= @recipe.point %></td>
       </tr>
+      <tr>
+        <th>投稿日</th>
+        <td><%= @recipe.created_at.strftime('%Y/%m/%d') %></td>
+      </tr>
     </table>
     
     <% if @recipe.user == current_user %>
     <%= link_to "編集する", edit_recipe_path, class: "btn btn-success" %>
     <% end %>
     <% if @recipe.user == current_user  || current_user.admin?%>
-    <%= link_to "削除する", recipe_path(@recipe.id), method: :delete, class: "btn btn-danger" %>
+    <%= link_to "削除する", recipe_path(@recipe.id), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
     <% end %>
 
   </div>
@@ -87,7 +91,7 @@
     <%= comment.user.name %>
     <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
     <% if comment.user == current_user || current_user.admin? %>
-      <%= link_to "削除", recipe_comment_path(comment.recipe, comment), method: :delete %>
+      <%= link_to "削除", recipe_comment_path(comment.recipe, comment), method: :delete, class: "btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
     <% end %>
   <% end %>
 </div>

@@ -47,10 +47,22 @@ class Public::RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    # もしレシピ投稿ユーザーとログインユーザーが異なるならばレシピ一覧にリダイレクトする
+    # unless @recipe.user == current_user.id
+    #   redirect_to recipes_path
+    # else
+    #   render :edit
+    # end
+    
+    @recipe = Recipe.find(params[:id])
+    
   end
 
   def update
-
+    # unless user.id == current_user.id
+    #   redirect_to recipes_path
+    # end
+    
     @recipe = Recipe.find(params[:id])
 
     @recipe.update(recipe_params)
