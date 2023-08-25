@@ -6,7 +6,7 @@
           <td>
             <!--recipeイメージ-->
             <%= link_to recipe_path(recipe.id) do %>
-              <%= image_tag recipe.image, size: "100x100" %>
+              <%= image_tag recipe.image, class: "index-img" %>
             <% end %>
           </td>
         </tr>

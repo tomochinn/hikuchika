@@ -11,7 +11,7 @@ class Public::RecipesController < ApplicationController
     else
       @genres = Genre.all
       @genre = Genre.where(id: params[:genre_id])
-      @recipes = Recipe.all
+      @recipes = Recipe.all.order(created_at: :desc)
 
     end
   end

@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-3">
       <% if @recipe.image.attached? %>
-        <%= image_tag @recipe.image, size: "200x200" %>
+        <%= image_tag @recipe.image, class: "show-img" %>
       <% else %>
         <%= image_tag 'default-image.jpg', size: "200x200" %>
       <% end %>
@@ -21,7 +21,7 @@
       <%= image_tag @recipe.user.get_image(100,100) %>
       <%= @recipe.user.name %>
 
-    <table class="table-border-0">
+    <table class="table">
       <tr>
         <th>レシピ名</th>
         <td><%= @recipe.recipe_name %></td>
@@ -44,15 +44,15 @@
       </tr>
       <tr>
         <th>材料</th>
-        <td><%= @recipe.ingredient %></td>
+        <td><%= safe_join(@recipe.ingredient.split("\n"),tag(:br)) %></td>
       </tr>
       <tr>
         <th>作り方</th>
-        <td><%= @recipe.recipe %></td>
+        <td><%= safe_join(@recipe.recipe.split("\n"),tag(:br)) %></td>
       </tr>
       <tr>
         <th>コツ・ポイント</th>
-        <td><%= @recipe.point %></td>
+        <td><%= safe_join(@recipe.point.split("\n"),tag(:br)) %></td>
       </tr>
       <tr>
         <th>投稿日</th>
